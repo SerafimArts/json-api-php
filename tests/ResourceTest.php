@@ -9,13 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Tobscure\Tests\JsonApi\Element;
+namespace Tobscure\Tests\JsonApi;
 
 use Tobscure\JsonApi\AbstractSerializer;
 use Tobscure\JsonApi\Collection;
 use Tobscure\JsonApi\Relationship;
 use Tobscure\JsonApi\Resource;
-use Tobscure\Tests\JsonApi\AbstractTestCase;
 
 class ResourceTest extends AbstractTestCase
 {

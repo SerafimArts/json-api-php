@@ -10,14 +10,14 @@
 
 Works with version 1.0 of the spec.
 
-**⚠️ The project is no longer maintained.** Check out [tobyzerner/json-api-server](https://github.com/tobyzerner/json-api-server) instead.
+**⚠️ The project is fork https://github.com/tobyzerner/json-api-php with support php 8.**
 
 ## Install
 
 via Composer:
 
 ```bash
-composer require tobscure/json-api
+composer require ronher/json-api
 ```
 
 ## Usage

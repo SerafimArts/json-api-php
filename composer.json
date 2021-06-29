@@ -1,19 +1,19 @@
 {
-    "name": "tobscure/json-api",
+    "name": "ronher/json-api",
     "description": "JSON-API responses in PHP",
     "keywords": ["json", "api", "standard", "jsonapi"],
     "license": "MIT",
     "authors": [
         {
-            "name": "Toby Zerner",
-            "email": "toby.zerner@gmail.com"
+            "name": "Roman Onishchenko",
+            "email": "dev@ro-man.su"
         }
     ],
     "require": {
-        "php": "^5.5.9 || ^7.0"
+        "php": "^8.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^4.8 || ^5.0"
+        "phpunit/phpunit": "^9.0"
     },
     "autoload": {
         "psr-4": {

@@ -11,6 +11,7 @@
 
 namespace Tobscure\Tests\JsonApi;
 
+use LogicException;
 use Tobscure\JsonApi\AbstractSerializer;
 use Tobscure\JsonApi\Collection;
 use Tobscure\JsonApi\Relationship;
@@ -60,11 +61,9 @@ class AbstractSerializerTest extends AbstractTestCase
         $this->assertTrue($relationship instanceof Relationship);
     }
 
-    /**
-     * @expectedException \LogicException
-     */
     public function testGetRelationshipValidatesRelationship()
     {
+        $this->expectException(LogicException::class);
         $serializer = new PostSerializer1;
 
         $serializer->getRelationship(null, 'invalid');

@@ -218,7 +218,7 @@ class Document implements JsonSerializable
      */
     public function __toString()
     {
-        return json_encode($this->toArray());
+        return (string) json_encode($this->toArray());
     }
 
     /**

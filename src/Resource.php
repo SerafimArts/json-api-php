@@ -133,7 +133,7 @@ class Resource implements ElementInterface
      */
     public function toIdentifier()
     {
-        if (! $this->data) {
+        if (!$this->data) {
             return;
         }
 
