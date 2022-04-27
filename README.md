@@ -4,11 +4,11 @@
     <a href="https://github.com/SerafimArts/json-api-php/actions"><img src="https://github.com/SerafimArts/json-api-php/workflows/build/badge.svg" /></a>
 </p>
 <p align="center">
-    <a href="https://packagist.org/packages/serafim/json-api-php"><img src="https://poser.pugx.org/serafim/json-api-php/require/php?style=for-the-badge" alt="Latest Stable Version" /></a>
-    <a href="https://packagist.org/packages/serafim/json-api-php"><img src="https://poser.pugx.org/serafim/json-api-php/version?style=for-the-badge" alt="Latest Stable Version" /></a>
-    <a href="https://packagist.org/packages/serafim/json-api-php"><img src="https://poser.pugx.org/serafim/json-api-php/v/unstable?style=for-the-badge" alt="Latest Unstable Version" /></a>
-    <a href="https://packagist.org/packages/serafim/json-api-php"><img src="https://poser.pugx.org/serafim/json-api-php/downloads?style=for-the-badge" alt="Total Downloads" /></a>
-    <a href="https://raw.githubusercontent.com/SerafimArts/json-api-php/master/LICENSE.md"><img src="https://poser.pugx.org/serafim/json-api-php/license?style=for-the-badge" alt="License MIT" /></a>
+    <a href="https://packagist.org/packages/serafim/json-api"><img src="https://poser.pugx.org/serafim/json-api/require/php?style=for-the-badge" alt="Latest Stable Version" /></a>
+    <a href="https://packagist.org/packages/serafim/json-api"><img src="https://poser.pugx.org/serafim/json-api/version?style=for-the-badge" alt="Latest Stable Version" /></a>
+    <a href="https://packagist.org/packages/serafim/json-api"><img src="https://poser.pugx.org/serafim/json-api/v/unstable?style=for-the-badge" alt="Latest Unstable Version" /></a>
+    <a href="https://packagist.org/packages/serafim/json-api"><img src="https://poser.pugx.org/serafim/json-api/downloads?style=for-the-badge" alt="Total Downloads" /></a>
+    <a href="https://raw.githubusercontent.com/SerafimArts/json-api-php/master/LICENSE.md"><img src="https://poser.pugx.org/serafim/json-api/license?style=for-the-badge" alt="License MIT" /></a>
 </p>
 
 
