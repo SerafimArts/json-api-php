@@ -1,6 +1,7 @@
 # CONTRIBUTING
 
-Contributions are welcome, and are accepted via pull requests. Please review these guidelines before submitting any pull requests.
+Contributions are welcome, and are accepted via pull requests. Please review 
+these guidelines before submitting any pull requests.
 
 ## Guidelines
 
@@ -27,5 +28,3 @@ $ vendor/bin/phpunit
 ```
 
 If the test suite passes on your local machine you should be good to go.
-
-When you make a pull request, the tests will automatically be run again by [Travis CI](https://travis-ci.org/) on multiple PHP versions and HHVM.

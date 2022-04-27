@@ -1,23 +1,29 @@
 # PHP JSON-API
 
-[![Build Status](https://img.shields.io/travis/tobscure/json-api/master.svg?style=flat)](https://travis-ci.org/tobscure/json-api)
-[![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/tobscure/json-api.svg?style=flat)](https://scrutinizer-ci.com/g/tobscure/json-api/code-structure)
-[![Quality Score](https://img.shields.io/scrutinizer/g/tobscure/json-api.svg?style=flat)](https://scrutinizer-ci.com/g/tobscure/json-api)
-[![Pre Release](https://img.shields.io/packagist/vpre/tobscure/json-api.svg?style=flat)](https://github.com/tobscure/json-api/releases)
-[![License](https://img.shields.io/packagist/l/tobscure/json-api.svg?style=flat)](https://packagist.org/packages/tobscure/json-api)
+<p align="center">
+    <a href="https://github.com/SerafimArts/json-api-php/actions"><img src="https://github.com/SerafimArts/json-api-php/workflows/build/badge.svg" /></a>
+</p>
+<p align="center">
+    <a href="https://packagist.org/packages/serafim/json-api-php"><img src="https://poser.pugx.org/serafim/json-api-php/require/php?style=for-the-badge" alt="Latest Stable Version" /></a>
+    <a href="https://packagist.org/packages/serafim/json-api-php"><img src="https://poser.pugx.org/serafim/json-api-php/version?style=for-the-badge" alt="Latest Stable Version" /></a>
+    <a href="https://packagist.org/packages/serafim/json-api-php"><img src="https://poser.pugx.org/serafim/json-api-php/v/unstable?style=for-the-badge" alt="Latest Unstable Version" /></a>
+    <a href="https://packagist.org/packages/serafim/json-api-php"><img src="https://poser.pugx.org/serafim/json-api-php/downloads?style=for-the-badge" alt="Total Downloads" /></a>
+    <a href="https://raw.githubusercontent.com/SerafimArts/json-api-php/master/LICENSE.md"><img src="https://poser.pugx.org/serafim/json-api-php/license?style=for-the-badge" alt="License MIT" /></a>
+</p>
+
 
 [JSON-API](http://jsonapi.org) responses in PHP.
 
 Works with version 1.0 of the spec.
 
-**⚠️ The project is fork https://github.com/tobyzerner/json-api-php with support php 8.**
+**⚠️ The project is fork https://github.com/tobyzerner/json-api-php with support PHP 8.0+**
 
 ## Install
 
 via Composer:
 
 ```bash
-composer require ronher/json-api
+composer require serafim/json-api
 ```
 
 ## Usage
