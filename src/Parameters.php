@@ -16,25 +16,17 @@ use Tobscure\JsonApi\Exception\InvalidParameterException;
 class Parameters
 {
     /**
-     * @var array
-     */
-    protected $input;
-
-    /**
      * @param array $input
      */
-    public function __construct(array $input)
+    public function __construct(protected array $input)
     {
-        $this->input = $input;
     }
 
     /**
      * Get the includes.
      *
-     * @param array $available
      *
      * @throws \Tobscure\JsonApi\Exception\InvalidParameterException
-     *
      * @return array
      */
     public function getInclude(array $available = [])
@@ -124,10 +116,8 @@ class Parameters
     /**
      * Get the sort.
      *
-     * @param array $available
      *
      * @throws \Tobscure\JsonApi\Exception\InvalidParameterException
-     *
      * @return array
      */
     public function getSort(array $available = [])
@@ -138,7 +128,7 @@ class Parameters
             $fields = explode(',', $input);
 
             foreach ($fields as $field) {
-                if (substr($field, 0, 1) === '-') {
+                if (str_starts_with($field, '-')) {
                     $field = substr($field, 1);
                     $order = 'desc';
                 } else {
@@ -176,9 +166,7 @@ class Parameters
             return [];
         }
 
-        return array_map(function ($fields) {
-            return explode(',', $fields);
-        }, $fields);
+        return array_map(fn($fields) => explode(',', $fields), $fields);
     }
 
     /**
@@ -201,7 +189,7 @@ class Parameters
      */
     protected function getInput($key, $default = null)
     {
-        return isset($this->input[$key]) ? $this->input[$key] : $default;
+        return $this->input[$key] ?? $default;
     }
 
     /**
@@ -215,6 +203,6 @@ class Parameters
     {
         $page = $this->getInput('page');
 
-        return isset($page[$key]) ? $page[$key] : '';
+        return $page[$key] ?? '';
     }
 }

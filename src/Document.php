@@ -13,12 +13,12 @@ namespace Tobscure\JsonApi;
 
 use JsonSerializable;
 
-class Document implements JsonSerializable
+class Document implements JsonSerializable, \Stringable
 {
     use LinksTrait;
     use MetaTrait;
 
-    const MEDIA_TYPE = 'application/vnd.api+json';
+    public const MEDIA_TYPE = 'application/vnd.api+json';
 
     /**
      * The included array.
@@ -42,26 +42,16 @@ class Document implements JsonSerializable
     protected $jsonapi;
 
     /**
-     * The data object.
-     *
-     * @var ElementInterface
+     * @param ElementInterface|null $data
      */
-    protected $data;
-
-    /**
-     * @param ElementInterface $data
-     */
-    public function __construct(ElementInterface $data = null)
+    public function __construct(protected ?ElementInterface $data = null)
     {
-        $this->data = $data;
     }
 
     /**
      * Get included resources.
      *
-     * @param \Tobscure\JsonApi\ElementInterface $element
      * @param bool $includeParent
-     *
      * @return \Tobscure\JsonApi\Resource[]
      */
     protected function getIncluded(ElementInterface $element, $includeParent = false)
@@ -111,7 +101,6 @@ class Document implements JsonSerializable
 
     /**
      * @param \Tobscure\JsonApi\Resource[] $resources
-     * @param \Tobscure\JsonApi\Resource $newResource
      *
      * @return \Tobscure\JsonApi\Resource[]
      */
@@ -132,7 +121,6 @@ class Document implements JsonSerializable
     /**
      * Set the data object.
      *
-     * @param \Tobscure\JsonApi\ElementInterface $element
      *
      * @return $this
      */
@@ -190,9 +178,7 @@ class Document implements JsonSerializable
             $resources = $this->getIncluded($this->data);
 
             if (count($resources)) {
-                $document['included'] = array_map(function (Resource $resource) {
-                    return $resource->toArray();
-                }, $resources);
+                $document['included'] = array_map(fn(Resource $resource) => $resource->toArray(), $resources);
             }
         }
 
@@ -216,9 +202,9 @@ class Document implements JsonSerializable
      *
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
-        return (string) json_encode($this->toArray());
+        return (string) json_encode($this->toArray(), JSON_THROW_ON_ERROR);
     }
 
     /**

@@ -33,7 +33,6 @@ trait LinksTrait
     /**
      * Set the links.
      *
-     * @param array $links
      *
      * @return $this
      */

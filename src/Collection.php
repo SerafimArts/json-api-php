@@ -33,7 +33,6 @@ class Collection implements ElementInterface
      * Convert an array of raw data to Resource objects.
      *
      * @param mixed $data
-     * @param SerializerInterface $serializer
      *
      * @return \Tobscure\JsonApi\Resource[]
      */
@@ -109,9 +108,7 @@ class Collection implements ElementInterface
      */
     public function toArray()
     {
-        return array_map(function (Resource $resource) {
-            return $resource->toArray();
-        }, $this->resources);
+        return array_map(fn(Resource $resource) => $resource->toArray(), $this->resources);
     }
 
     /**
@@ -119,8 +116,6 @@ class Collection implements ElementInterface
      */
     public function toIdentifier()
     {
-        return array_map(function (Resource $resource) {
-            return $resource->toIdentifier();
-        }, $this->resources);
+        return array_map(fn(Resource $resource) => $resource->toIdentifier(), $this->resources);
     }
 }

@@ -17,16 +17,6 @@ class Resource implements ElementInterface
     use MetaTrait;
 
     /**
-     * @var mixed
-     */
-    protected $data;
-
-    /**
-     * @var \Tobscure\JsonApi\SerializerInterface
-     */
-    protected $serializer;
-
-    /**
      * A list of relationships to include.
      *
      * @var array
@@ -56,10 +46,8 @@ class Resource implements ElementInterface
      * @param mixed $data
      * @param \Tobscure\JsonApi\SerializerInterface $serializer
      */
-    public function __construct($data, SerializerInterface $serializer)
+    public function __construct(protected $data, protected SerializerInterface $serializer)
     {
-        $this->data = $data;
-        $this->serializer = $serializer;
     }
 
     /**
@@ -207,7 +195,6 @@ class Resource implements ElementInterface
      * Filter the given fields array (attributes or relationships) according
      * to the requested fieldset.
      *
-     * @param array $fields
      *
      * @return array
      */
@@ -223,7 +210,6 @@ class Resource implements ElementInterface
     /**
      * Merge the attributes of merged resources into an array of attributes.
      *
-     * @param array $attributes
      *
      * @return array
      */
@@ -307,7 +293,6 @@ class Resource implements ElementInterface
      * Merge the relationships of merged resources into an array of
      * relationships.
      *
-     * @param array $relationships
      *
      * @return array
      */
@@ -329,15 +314,12 @@ class Resource implements ElementInterface
      */
     protected function convertRelationshipsToArray(array $relationships)
     {
-        return array_map(function (Relationship $relationship) {
-            return $relationship->toArray();
-        }, $relationships);
+        return array_map(fn(Relationship $relationship) => $relationship->toArray(), $relationships);
     }
 
     /**
      * Merge a resource into this one.
      *
-     * @param \Tobscure\JsonApi\Resource $resource
      *
      * @return void
      */
@@ -395,8 +377,6 @@ class Resource implements ElementInterface
     }
 
     /**
-     * @param \Tobscure\JsonApi\SerializerInterface $serializer
-     *
      * @return void
      */
     public function setSerializer(SerializerInterface $serializer)

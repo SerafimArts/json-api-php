@@ -17,26 +17,18 @@ class Relationship
     use MetaTrait;
 
     /**
-     * The data object.
-     *
-     * @var \Tobscure\JsonApi\ElementInterface|null
-     */
-    protected $data;
-
-    /**
      * Create a new relationship.
      *
-     * @param \Tobscure\JsonApi\ElementInterface|null $data
+     * @param ElementInterface|null $data
      */
-    public function __construct(ElementInterface $data = null)
+    public function __construct(protected ?ElementInterface $data = null)
     {
-        $this->data = $data;
     }
 
     /**
      * Get the data object.
      *
-     * @return \Tobscure\JsonApi\ElementInterface|null
+     * @return ElementInterface|null
      */
     public function getData()
     {
@@ -46,7 +38,7 @@ class Relationship
     /**
      * Set the data object.
      *
-     * @param \Tobscure\JsonApi\ElementInterface|null $data
+     * @param ElementInterface|null $data
      *
      * @return $this
      */

@@ -33,7 +33,6 @@ trait MetaTrait
     /**
      * Set the meta data array.
      *
-     * @param array $meta
      *
      * @return $this
      */

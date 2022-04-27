@@ -26,15 +26,13 @@ class Util
      * ['user' => ['employer', 'employer.country'], 'comments' => []]
      *
      * @param array $paths
-     *
-     * @return array
      */
-    public static function parseRelationshipPaths(array $paths)
+    public static function parseRelationshipPaths(array $paths): array
     {
         $tree = [];
 
         foreach ($paths as $path) {
-            list($primary, $nested) = array_pad(explode('.', $path, 2), 2, null);
+            [$primary, $nested] = array_pad(explode('.', $path, 2), 2, null);
 
             if (! isset($tree[$primary])) {
                 $tree[$primary] = [];

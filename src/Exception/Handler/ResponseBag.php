@@ -16,17 +16,12 @@ namespace Tobscure\JsonApi\Exception\Handler;
  */
 class ResponseBag
 {
-    private $status;
-    private $errors;
-
     /**
      * @param int $status
      * @param array $errors
      */
-    public function __construct($status, array $errors)
+    public function __construct(private $status, private array $errors)
     {
-        $this->status = $status;
-        $this->errors = $errors;
     }
 
     /**

@@ -16,16 +16,10 @@ use Exception;
 class FallbackExceptionHandler implements ExceptionHandlerInterface
 {
     /**
-     * @var bool
-     */
-    private $debug;
-
-    /**
      * @param bool $debug
      */
-    public function __construct($debug)
+    public function __construct(private $debug)
     {
-        $this->debug = $debug;
     }
 
     /**
@@ -39,7 +33,7 @@ class FallbackExceptionHandler implements ExceptionHandlerInterface
     /**
      * {@inheritdoc}
      */
-    public function handle(Exception $e)
+    public function handle(\Throwable $e)
     {
         $status = 500;
         $error = $this->constructError($e, $status);
@@ -48,9 +42,7 @@ class FallbackExceptionHandler implements ExceptionHandlerInterface
     }
 
     /**
-     * @param \Exception $e
      * @param $status
-     *
      * @return array
      */
     private function constructError(Exception $e, $status)

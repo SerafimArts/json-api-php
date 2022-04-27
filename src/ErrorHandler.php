@@ -22,18 +22,16 @@ class ErrorHandler
      *
      * @var \Tobscure\JsonApi\Exception\Handler\ExceptionHandlerInterface[]
      */
-    private $handlers = [];
+    private array $handlers = [];
 
     /**
      * Handle the exception provided.
      *
-     * @param Exception $e
      *
      * @throws RuntimeException
-     *
      * @return \Tobscure\JsonApi\Exception\Handler\ResponseBag
      */
-    public function handle(Exception $e)
+    public function handle(\Throwable $e)
     {
         foreach ($this->handlers as $handler) {
             if ($handler->manages($e)) {
@@ -41,13 +39,12 @@ class ErrorHandler
             }
         }
 
-        throw new RuntimeException('Exception handler for '.get_class($e).' not found.');
+        throw new RuntimeException('Exception handler for '.$e::class.' not found.');
     }
 
     /**
      * Register a new exception handler.
      *
-     * @param \Tobscure\JsonApi\Exception\Handler\ExceptionHandlerInterface $handler
      *
      * @return void
      */

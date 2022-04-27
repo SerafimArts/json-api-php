@@ -27,7 +27,7 @@ class InvalidParameterExceptionHandler implements ExceptionHandlerInterface
     /**
      * {@inheritdoc}
      */
-    public function handle(Exception $e)
+    public function handle(\Throwable $e)
     {
         $status = 400;
         $error = [];

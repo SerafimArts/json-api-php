@@ -16,20 +16,13 @@ use Exception;
 class InvalidParameterException extends Exception
 {
     /**
-     * @var string The parameter that caused this exception.
-     */
-    private $invalidParameter;
-
-    /**
      * {@inheritdoc}
      *
      * @param string $invalidParameter The parameter that caused this exception.
      */
-    public function __construct($message = '', $code = 0, $previous = null, $invalidParameter = '')
+    public function __construct($message = '', $code = 0, $previous = null, private $invalidParameter = '')
     {
         parent::__construct($message, $code, $previous);
-
-        $this->invalidParameter = $invalidParameter;
     }
 
     /**
