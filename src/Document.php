@@ -201,10 +201,11 @@ class Document implements JsonSerializable, \Stringable
      * Map to string.
      *
      * @return string
+     * @throws \JsonException
      */
     public function __toString(): string
     {
-        return (string) json_encode($this->toArray(), JSON_THROW_ON_ERROR);
+        return (string)json_encode($this->toArray(), JSON_THROW_ON_ERROR);
     }
 
     /**
@@ -212,7 +213,7 @@ class Document implements JsonSerializable, \Stringable
      *
      * @return array
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return $this->toArray();
     }
